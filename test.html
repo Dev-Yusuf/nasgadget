@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logo Carousel</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="carousel">
+        <div class="carousel-wrapper">
+            <div class="carousel-content">
+                <img src="logo1.png" alt="Logo 1">
+                <img src="logo2.png" alt="Logo 2">
+                <img src="logo3.png" alt="Logo 3">
+                <img src="logo4.png" alt="Logo 4">
+                <img src="logo5.png" alt="Logo 5">
+            </div>
+            <div class="carousel-content">
+                <img src="logo1.png" alt="Logo 1">
+                <img src="logo2.png" alt="Logo 2">
+                <img src="logo3.png" alt="Logo 3">
+                <img src="logo4.png" alt="Logo 4">
+                <img src="logo5.png" alt="Logo 5">
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+ 
+
+
+    <style>
+ /* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+
+.carousel {
+    overflow: hidden;
+    width: 80%;
+    max-width: 1200px;
+    position: relative;
+}
+
+.carousel-wrapper {
+    display: flex;
+    animation: scroll 20s linear infinite;
+    mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+}
+
+.carousel-content {
+    display: flex;
+}
+
+.carousel-content img {
+    max-width: 100px;
+    margin: 0 20px;
+}
+
+/* Keyframes to scroll the content */
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* Blurred edges */
+.carousel::before,
+.carousel::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100px;
+    background: linear-gradient(to left, transparent, rgba(255, 255, 255, 1));
+    z-index: 2;
+}
+
+.carousel::after {
+    right: 0;
+    transform: rotate(180deg);
+}
+
+    </style>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const carouselWrapper = document.querySelector(".carousel-wrapper");
+    const carouselContents = document.querySelectorAll(".carousel-content");
+    const contentWidth = carouselContents[0].offsetWidth;
+
+    let start = null;
+    let speed = 0.1; // Adjust speed here
+    let step = (timestamp) => {
+        if (!start) start = timestamp;
+        let progress = timestamp - start;
+        let translateX = (progress * speed) % contentWidth;
+        carouselWrapper.style.transform = `translateX(-${translateX}px)`;
+        requestAnimationFrame(step);
+    };
+
+    requestAnimationFrame(step);
+});
+</script>
+    
+</body>
+</html>
+
