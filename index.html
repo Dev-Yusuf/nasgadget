@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Agency</title>
+    <title>Nas Gadgets</title>
     <link rel="stylesheet" href="./assets/styles/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Lato:wght@400;700&family=Playfair+Display:wght@400;700&family=Open+Sans:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <script defer src="./assets/js/index.js"></script>
@@ -12,16 +13,17 @@
 <body>
     <header>
         <div class="header-container">
-            <div class="logo">Dara.</div>
+            <div class="logo">
+                <img src="./assets/img/logo.jpeg" alt="Dara Logo">
+            </div>
             <nav id="nav-menu">
                 <ul class="nav-list">
-                    <li><a href="#">Works</a></li>
                     <li><a href="#">Services</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Blog</a></li>              
+                    <li><a href="#">About</a></li> 
+                    <li><a href="#">Contact</a></li>            
                 </ul>
             </nav>
-            <a href="#" class="btn call-to-action">Contact Us</a>
+            <a href="#" class="c-btn call-to-action">Visit Store</a>
             <div class="hamburger" id="hamburger">
                 <i class="fas fa-bars"></i>
             </div>
@@ -29,66 +31,137 @@
     </header>
 
     <section class="hero">
-        <h1>A Digital Agency In Nigeria.</h1>
-        <p>We help businesses grow online through Branding, designs, Websites and SEO.</p>
-        <div class="cta-buttons">
-            <a href="#" class="btn"><i class="fas fa-briefcase"></i> View Our Work</a>
-            <a href="#" class="btn secondary"><i class="fas fa-users"></i> Meet Our Team</a>
-        </div>
-    </section>
-
-    <section class="video-section">
-        <video autoplay muted loop id="bg-video">
-            <source src="./assets/img/shape-showreel-2024_looping-v3.mp4" type="video/mp4">
+        <video autoplay muted loop class="hero-video">
+            <source src="./assets/img/0731.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-        <div class="text-container">
-            <div class="text-slide">Let hand your brand identity</div>
-            <div class="text-slide">Your designs</div>
-            <div class="text-slide">Let build your website</div>
-            <div class="text-slide">And scale your businesses</div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Nas Gadgets</h1>
+            <p>We <b>Buy</b>, <b>Sell</b>, and <b>Swap</b> new and used devices at unbeatable prices. Shop with the Grand Masters of Discount and experience premium tech.</p>
+            <div class="social-icons">
+                <a href="https://www.instagram.com" target="_blank" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me" target="_blank" class="social-icon whatsapp"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.tiktok.com" target="_blank" class="social-icon tiktok"><i class="fab fa-tiktok"></i></a>
+            </div>
         </div>
     </section>
 
-    <section class="about-section">
-        <div class="container">
-            <div class="about-content">
-                <h2>Nice to meet ya 👋😊</h2>
-                <div class="description-cta">
-                    <p>An independent web design and branding agency in Manchester set up in 2010 who care, build relationships, have industry experience, and win awards.</p>
-                    <div class="cta-buttons">
-                        <a href="#" class="btn"><i class="fas fa-info-circle"></i> About Shape</a>
-                    </div>
+    <section class="section__container steps__container" id="services">
+        <p class="section__subheader">WHY CHOOSE US</p>
+        <h2 class="section__header">Experience Unmatched Services</h2>
+        <div class="steps__grid">
+          <div class="steps__card">
+            <span><i class="ri-truck-line"></i></span>
+            <h4>Free Shipping</h4>
+            <p>Enjoy free shipping on all orders, ensuring you get the best value without any extra cost.</p>
+          </div>
+          <div class="steps__card">
+            <span><i class="ri-time-line"></i></span>
+            <h4>Fast Delivery</h4>
+            <p>Receive your products quickly with our efficient and reliable delivery service.</p>
+          </div>
+          <div class="steps__card">
+            <span><i class="ri-customer-service-line"></i></span>
+            <h4>24/7 Support</h4>
+            <p>Our dedicated support team is available around the clock to assist you with any inquiries.</p>
+          </div>
+        </div>
+      </section>
+
+    
+      <section class="marquee-section">
+        <h2>Brands We Offer</h2>
+        <div class="marquee">
+            <div class="marquee-content">
+                <img src="./assets/img/apple_logo.jpeg" alt="apple_logo">
+                <img src="./assets/img/R.png" alt="samsung">
+                <img src="./assets/img/Xiaomi-Logo.png" alt="Xiaomi-Logo">
+                <img src="./assets/img/JBL-Logo.png" alt="JBL-Logo">
+                <img src="./assets/img/playstation.png" alt="playstation">
+                <img src="./assets/img/hp.png" alt="hp">
+                <img src="./assets/img/apple_logo.jpeg" alt="apple_logo">
+                <img src="./assets/img/R.png" alt="samsung">
+                <img src="./assets/img/Xiaomi-Logo.png" alt="Xiaomi-Logo">
+                <img src="./assets/img/JBL-Logo.png" alt="JBL-Logo">
+                <img src="./assets/img/playstation.png" alt="playstation">
+                <img src="./assets/img/hp.png" alt="hp">
+                <img src="./assets/img/apple_logo.jpeg" alt="apple_logo">
+                <img src="./assets/img/R.png" alt="samsung">
+                <img src="./assets/img/Xiaomi-Logo.png" alt="Xiaomi-Logo">
+                <img src="./assets/img/JBL-Logo.png" alt="JBL-Logo">
+                <img src="./assets/img/playstation.png" alt="playstation">
+                <img src="./assets/img/hp.png" alt="hp">
+                <!-- Repeat or add more logos as needed -->
+            </div>
+        </div>
+    </section>
+
+    <section class="dual-section">
+        <h2 class="section-title">Explore Our Products</h2>
+        <div class="section-wrapper">
+            <div class="section-left">
+                <div class="content">
+                    <h1>iPhone</h1>
+                    <p>Our most powerful cameras yet. Ultrafast chips. And USB-C.</p>
+                    <a href="#" class="btn">Learn more</a>
+                    <a href="#" class="btn">Shop iPhone</a>
                 </div>
+                <img src="./assets/img/OIP.jpeg" alt="iPhone" class="section-image">
+            </div>
+            <div class="section-right">
+                <div class="content">
+                    <h1>Apple Intelligence</h1>
+                    <p>AI for the rest of us. Coming in beta this fall.</p>
+                    <a href="#" class="btn">Learn more</a>
+                    <a href="#" class="btn">Watch the film</a>
+                </div>
+                <img src="./assets/img/OIP.jpeg" alt="Apple Intelligence" class="section-image">
             </div>
         </div>
+        
     </section>
+
     
-    <section class="logo-section">
-        <div class="container">
-            <div class="logo-grid">
-                <a href="https://nasdaq.com" target="_blank" class="logo-item" data-tooltip="Nasdaq">
-                    <img src="./assets/img/google.png" alt="Nasdaq Logo">
-                </a>
-                <a href="https://nigeriantribune.com" target="_blank" class="logo-item" data-tooltip="Nigerian Tribune">
-                    <img src="./assets/img/nike.png" alt="Nigerian Tribune Logo">
-                </a>
-                <a href="https://umugbo-unite.com" target="_blank" class="logo-item" data-tooltip="Umugbo Unite">
-                    <img src="./assets/img/sss1.png" alt="Umugbo Unite Logo">
-                </a>
-                <a href="https://builtin.africa" target="_blank" class="logo-item" data-tooltip="Built In Africa">
-                    <img src="./assets/img/uber.png" alt="Built In Africa Logo">
-                </a>
-                <a href="https://neusroom.com" target="_blank" class="logo-item" data-tooltip="Neusroom">
-                    <img src="./assets/img/youtube.png" alt="Neusroom Logo">
-                </a>
-                <a href="https://wedeycode.com" target="_blank" class="logo-item" data-tooltip="WeDeyCode">
-                    <img src="./assets/img/sss1.png" alt="WeDeyCode Logo">
-                </a>
-            </div>
-        </div>
-    </section>
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <script>
@@ -144,6 +217,21 @@ document.addEventListener("DOMContentLoaded", function () {
     slides[currentSlide].style.display = 'block';
     setInterval(showNextSlide, 1000);
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    const projectItems = document.querySelectorAll(".project-item");
+    
+    projectItems.forEach(item => {
+        item.addEventListener("mouseover", () => {
+            item.classList.add("hover");
+        });
+        
+        item.addEventListener("mouseout", () => {
+            item.classList.remove("hover");
+        });
+    });
+});
+
 </script>
 
 </body>
