@@ -7,110 +7,194 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="carousel">
-        <div class="carousel-wrapper">
-            <div class="carousel-content">
-                <img src="logo1.png" alt="Logo 1">
-                <img src="logo2.png" alt="Logo 2">
-                <img src="logo3.png" alt="Logo 3">
-                <img src="logo4.png" alt="Logo 4">
-                <img src="logo5.png" alt="Logo 5">
+    <section class="hero-slider">
+        <div class="slider-container">
+          <div class="slide active">
+            <div class="slide-content">
+              <h1>Experience the Future</h1>
+              <p>Introducing the NovaTech Quantum Series</p>
+              <a href="#" class="cta-button">Learn More</a>
             </div>
-            <div class="carousel-content">
-                <img src="logo1.png" alt="Logo 1">
-                <img src="logo2.png" alt="Logo 2">
-                <img src="logo3.png" alt="Logo 3">
-                <img src="logo4.png" alt="Logo 4">
-                <img src="logo5.png" alt="Logo 5">
+            <div class="slide-image" style="background-image: url('./assets/img/display3.jpeg');"></div>
+          </div>
+          <div class="slide">
+            <div class="slide-content">
+              <h1>Revolutionize Your Lifestyle</h1>
+              <p>Smart Home Integration Like Never Before</p>
+              <a href="#" class="cta-button">Discover Now</a>
             </div>
+            <div class="slide-image" style="background-image: url('./assets/img/display1.jpeg');"></div>
+          </div>
+          <div class="slide">
+            <div class="slide-content">
+              <h1>Eco-Friendly Innovation</h1>
+              <p>Sustainable Tech for a Greener Tomorrow</p>
+              <a href="#" class="cta-button">Join the Movement</a>
+            </div>
+            <div class="slide-image" style="background-image: url('./assets/img/display2.jpeg');"></div>
+          </div>
         </div>
-    </div>
-    <script src="script.js"></script>
- 
+        <div class="slider-nav">
+          <button class="prev-slide">&lt;</button>
+          <button class="next-slide">&gt;</button>
+        </div>
+        <div class="slider-dots"></div>
+      </section>
 
 
-    <style>
+<style>
  /* styles.css */
 
-body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f4f4f4;
+ .hero-slider {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
 }
 
-.carousel {
-    overflow: hidden;
-    width: 80%;
-    max-width: 1200px;
-    position: relative;
+.slider-container {
+  height: 100%;
+  display: flex;
+  transition: transform 0.5s ease-in-out;
 }
 
-.carousel-wrapper {
-    display: flex;
-    animation: scroll 20s linear infinite;
-    mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+.slide {
+  flex: 0 0 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10%;
 }
 
-.carousel-content {
-    display: flex;
+.slide-content {
+  flex: 0 0 50%;
+  color: #fff;
+  z-index: 1;
 }
 
-.carousel-content img {
-    max-width: 100px;
-    margin: 0 20px;
+.slide-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
 }
 
-/* Keyframes to scroll the content */
-@keyframes scroll {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(-50%);
-    }
+.slide-content p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
 }
 
-/* Blurred edges */
-.carousel::before,
-.carousel::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 100px;
-    background: linear-gradient(to left, transparent, rgba(255, 255, 255, 1));
-    z-index: 2;
+.cta-button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: #00a8e8;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 30px;
+  transition: background-color 0.3s;
 }
 
-.carousel::after {
-    right: 0;
-    transform: rotate(180deg);
+.cta-button:hover {
+  background-color: #0077b6;
 }
 
-    </style>
+.slide-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.7;
+}
+
+.slider-nav button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  padding: 1rem;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.prev-slide {
+  left: 20px;
+}
+
+.next-slide {
+  right: 20px;
+}
+
+.slider-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: #fff;
+}
+
+</style>
 
 
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const carouselWrapper = document.querySelector(".carousel-wrapper");
-    const carouselContents = document.querySelectorAll(".carousel-content");
-    const contentWidth = carouselContents[0].offsetWidth;
+document.addEventListener('DOMContentLoaded', () => {
+  const slider = document.querySelector('.slider-container');
+  const slides = document.querySelectorAll('.slide');
+  const prevButton = document.querySelector('.prev-slide');
+  const nextButton = document.querySelector('.next-slide');
+  const dotsContainer = document.querySelector('.slider-dots');
 
-    let start = null;
-    let speed = 0.1; // Adjust speed here
-    let step = (timestamp) => {
-        if (!start) start = timestamp;
-        let progress = timestamp - start;
-        let translateX = (progress * speed) % contentWidth;
-        carouselWrapper.style.transform = `translateX(-${translateX}px)`;
-        requestAnimationFrame(step);
-    };
+  let currentSlide = 0;
 
-    requestAnimationFrame(step);
+  // Create dots
+  slides.forEach((_, index) => {
+    const dot = document.createElement('div');
+    dot.classList.add('dot');
+    if (index === 0) dot.classList.add('active');
+    dot.addEventListener('click', () => goToSlide(index));
+    dotsContainer.appendChild(dot);
+  });
+
+  const dots = document.querySelectorAll('.dot');
+
+  function goToSlide(n) {
+    slider.style.transform = `translateX(-${n * 100}%)`;
+    slides[currentSlide].classList.remove('active');
+    slides[n].classList.add('active');
+    dots[currentSlide].classList.remove('active');
+    dots[n].classList.add('active');
+    currentSlide = n;
+  }
+
+  function nextSlide() {
+    goToSlide((currentSlide + 1) % slides.length);
+  }
+
+  function prevSlide() {
+    goToSlide((currentSlide - 1 + slides.length) % slides.length);
+  }
+
+  nextButton.addEventListener('click', nextSlide);
+  prevButton.addEventListener('click', prevSlide);
+
+  // Auto-play
+  setInterval(nextSlide, 5000);
 });
 </script>
     

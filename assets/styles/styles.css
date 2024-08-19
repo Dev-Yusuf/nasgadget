@@ -39,6 +39,7 @@
 
 body {
     margin: 0;
+    padding-top: 60px; /* Adjusted to match new navbar height */
     font-family: var(--body-text-font-family);
     color: var(--body-text-color);
 }
@@ -55,8 +56,14 @@ body {
 
 header {
     background: #fff;
-    padding: var(--header-padding-top) 0;
+    padding: 10px 0; /* Reduced padding from top and bottom */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 60px; /* Reduced height */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
 }
 
 .header-container {
@@ -69,8 +76,8 @@ header {
 }
 
 .logo img {
-    width: 150px; /* Adjust the width according to your design */
-    height: auto; 
+    width: 120px; /* Adjust this value to fit your new navbar height */
+    height: auto;
 }
 
 nav {
@@ -84,15 +91,17 @@ nav {
     margin: 0;
     padding: 0;
     display: flex;
+    align-items: center; /* Center items vertically */
+    height: 100%; /* Make sure it takes full height of the header */
 }
 
 .nav-list li {
-    margin-left: 20px;
+    margin-left: 15px; /* Slightly reduced margin */
 }
 
 .nav-list a {
     text-decoration: none;
-    font-size: var(--nav-font-size);
+    font-size: 16px; /* Slightly reduced font size */
     font-family: var(--nav-font-family);
     color: var(--nav-color);
     position: relative;
@@ -114,15 +123,15 @@ nav {
 }
 
 .call-to-action {
-    font-size: var(--button-font-size);
+    font-size: 14px;
     font-family: var(--button-font-family);
     color: var(--button-color);
     background-color: var(--button-background) !important;
-    padding: 10px 20px;
+    padding: 8px 16px;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
     text-decoration: none;
-    margin-left: 20px;
+    margin-left: 15px;
 }
 
 .hamburger {
@@ -131,16 +140,20 @@ nav {
 }
 
 .hamburger .fas {
-    font-size: 24px;
+    font-size: 20px; /* Slightly reduced size */
     color: var(--header-color);
 }
+
 
 .hero {
     position: relative;
     text-align: center;
-    padding: 60px 20px;
-    color: #ffffff; /* Make the text white */
+    color: #ffffff;
     overflow: hidden;
+    height: calc(100vh - 60px); /* Adjusted to new navbar height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .hero-video {
@@ -159,13 +172,15 @@ nav {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Black transparent overlay */
+    background-color: rgba(0, 0, 0, 0.7);
     z-index: 2;
 }
 
 .hero-content {
     position: relative;
-    z-index: 3; /* Ensure text appears above video and overlay */
+    z-index: 3;
+    width: 100%;
+    padding: 20px;
 }
 
 .hero h1 {
@@ -400,7 +415,7 @@ nav {
 
 .dual-section {
     padding: 20px;
-    overflow-x: hidden; /* Prevents horizontal scrolling */
+    overflow: hidden;
 }
 
 .section-title {
@@ -412,71 +427,90 @@ nav {
 
 .section-wrapper {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     width: 100%;
-    max-width: 100%; /* Ensure the wrapper doesn’t exceed the viewport width */
-    height: 100vh; /* Full screen height */
-    box-sizing: border-box; /* Include padding and border in element's width and height */
-    overflow-x: hidden; /* Ensure no overflow in wrapper */
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
-.section-left, .section-right {
-    flex: 1;
+.section-item {
+    flex-basis: calc(50% - 10px);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 20px;
+    padding: 40px 20px;
     position: relative;
-    box-sizing: border-box; /* Include padding and border in element's width and height */
+    box-sizing: border-box;
+    overflow: hidden;
+    margin-bottom: 20px;
+    min-height: 100vh;
 }
 
-/* Adding margin between the divs */
-.section-left {
-    margin-right: 10px; /* Add margin to the right side of the left section */
+/* Brand-specific colors */
+.section-item:nth-child(1) { /* Apple */
+    background-color: #000000;
+    color: #ffffff;
 }
 
-.section-right {
-    margin-left: 10px; /* Add margin to the left side of the right section */
+.section-item:nth-child(2) { /* Samsung */
+    background-color: #1428a0;
+    color: #ffffff;
 }
 
-/* Content styling (text and buttons) */
+.section-item:nth-child(3) { /* Xiaomi */
+    background-color: #ff6900;
+    color: #ffffff;
+}
+
+.section-item:nth-child(4) { /* JBL */
+    background-color: #ff6600;
+    color: #ffffff;
+}
+
+.section-item:nth-child(5) { /* HP */
+    background-color: #0096d6;
+    color: #ffffff;
+}
+
+.section-item:nth-child(6) { /* PlayStation */
+    background-color: #003791;
+    color: #ffffff;
+}
+
 .content {
-    z-index: 2; /* Ensures content is above the image */
+    z-index: 2;
     max-width: 80%;
     margin-bottom: 20px;
 }
 
-/* Image styling */
 .section-image {
     max-width: 100%;
     height: auto;
     margin-top: 20px;
     position: relative;
     z-index: 1;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-/* Specific section colors and backgrounds */
-.section-left {
-    background-color: #000; /* Black background */
-    color: #fff; /* White text */
+.section-image.animate {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-.section-right {
-    background-color: #f7f7f7; /* Light grey background */
-    color: #000; /* Black text */
-}
-
-/* Button styles */
 .btn {
     display: inline-block;
     padding: 10px 20px;
     font-size: 16px;
     font-weight: 500;
-    color: #007BFF;
-    background-color: transparent;
-    border: 2px solid #007BFF;
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 2px solid #ffffff;
     border-radius: 22px;
     text-align: center;
     text-decoration: none;
@@ -485,22 +519,21 @@ nav {
 }
 
 .btn:hover {
-    background-color: #007BFF;
-    color: #fff;
+    background-color: #ffffff;
+    color: #000000;
     transform: scale(1.05);
 }
 
-/* Mobile Responsiveness */
 @media (max-width: 768px) {
     .section-wrapper {
         flex-direction: column;
-        overflow-x: hidden;
     }
 
-    .section-left, .section-right {
-        margin: 0; /* Remove the margin on mobile screens */
+    .section-item {
+        flex-basis: 100%;
+        margin-bottom: 20px;
+        min-height: auto;
         height: auto;
-        padding: 40px 20px;
     }
 
     .section-image {
@@ -511,4 +544,14 @@ nav {
     .content {
         max-width: 90%;
     }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .btn {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
 }
+

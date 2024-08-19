@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nas Gadgets</title>
     <link rel="stylesheet" href="./assets/styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Lato:wght@400;700&family=Playfair+Display:wght@400;700&family=Open+Sans:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
@@ -100,7 +101,7 @@
     <section class="dual-section">
         <h2 class="section-title">Explore Our Products</h2>
         <div class="section-wrapper">
-            <div class="section-left">
+            <div class="section-item left">
                 <div class="content">
                     <h1>iPhone</h1>
                     <p>Our most powerful cameras yet. Ultrafast chips. And USB-C.</p>
@@ -109,7 +110,7 @@
                 </div>
                 <img src="./assets/img/OIP.jpeg" alt="iPhone" class="section-image">
             </div>
-            <div class="section-right">
+            <div class="section-item right">
                 <div class="content">
                     <h1>Apple Intelligence</h1>
                     <p>AI for the rest of us. Coming in beta this fall.</p>
@@ -118,10 +119,46 @@
                 </div>
                 <img src="./assets/img/OIP.jpeg" alt="Apple Intelligence" class="section-image">
             </div>
+            <div class="section-item left">
+                <div class="content">
+                    <h1>Product 3</h1>
+                    <p>Description for Product 3.</p>
+                    <a href="#" class="btn">Learn more</a>
+                    <a href="#" class="btn">Shop now</a>
+                </div>
+                <img src="./assets/img/product3.jpg" alt="Product 3" class="section-image">
+            </div>
+            <div class="section-item right">
+                <div class="content">
+                    <h1>Product 4</h1>
+                    <p>Description for Product 4.</p>
+                    <a href="#" class="btn">Learn more</a>
+                    <a href="#" class="btn">Shop now</a>
+                </div>
+                <img src="./assets/img/product4.jpg" alt="Product 4" class="section-image">
+            </div>
+            <div class="section-item left">
+                <div class="content">
+                    <h1>Product 5</h1>
+                    <p>Description for Product 5.</p>
+                    <a href="#" class="btn">Learn more</a>
+                    <a href="#" class="btn">Shop now</a>
+                </div>
+                <img src="./assets/img/product5.jpg" alt="Product 5" class="section-image">
+            </div>
+            <div class="section-item right">
+                <div class="content">
+                    <h1>Product 6</h1>
+                    <p>Description for Product 6.</p>
+                    <a href="#" class="btn">Learn more</a>
+                    <a href="#" class="btn">Shop now</a>
+                </div>
+                <img src="./assets/img/product6.jpg" alt="Product 6" class="section-image">
+            </div>
         </div>
-        
     </section>
 
+  
     
     
 
@@ -165,70 +202,26 @@
 
 
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-    const slides = document.querySelectorAll('.text-slide');
-    let currentSlide = 0;
+document.addEventListener('DOMContentLoaded', function() {
+    const images = document.querySelectorAll('.section-image');
 
-    function showNextSlide() {
-        slides[currentSlide].style.display = 'none';
-        currentSlide = (currentSlide + 1) % slides.length;
-        slides[currentSlide].style.display = 'block';
-    }
+    const options = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.3
+    };
 
-    slides[currentSlide].style.display = 'block';
-    setInterval(showNextSlide, 4000);
-});
-
-document.addEventListener("DOMContentLoaded", function() {
-    const logoItems = document.querySelectorAll(".logo-item");
-
-    logoItems.forEach(item => {
-        item.addEventListener("mouseenter", () => {
-            const tooltip = item.querySelector("::before");
-            tooltip.style.opacity = 1;
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+                observer.unobserve(entry.target);
+            }
         });
+    }, options);
 
-        item.addEventListener("mouseleave", () => {
-            const tooltip = item.querySelector("::before");
-            tooltip.style.opacity = 0;
-        });
-    });
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-    const hamburger = document.getElementById('hamburger');
-    const navMenu = document.getElementById('nav-menu');
-
-    hamburger.addEventListener('click', () => {
-        navMenu.classList.toggle('show');
-    });
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-    const slides = document.querySelectorAll('.text-slide');
-    let currentSlide = 0;
-
-    function showNextSlide() {
-        slides[currentSlide].style.display = 'none';
-        currentSlide = (currentSlide + 1) % slides.length;
-        slides[currentSlide].style.display = 'block';
-    }
-
-    slides[currentSlide].style.display = 'block';
-    setInterval(showNextSlide, 1000);
-});
-
-document.addEventListener("DOMContentLoaded", function() {
-    const projectItems = document.querySelectorAll(".project-item");
-    
-    projectItems.forEach(item => {
-        item.addEventListener("mouseover", () => {
-            item.classList.add("hover");
-        });
-        
-        item.addEventListener("mouseout", () => {
-            item.classList.remove("hover");
-        });
+    images.forEach(image => {
+        observer.observe(image);
     });
 });
 
