@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nas Gadgets</title>
     <link rel="stylesheet" href="./assets/styles/styles.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
@@ -48,115 +50,146 @@
         </div>
     </section>
 
-    <section class="section__container steps__container" id="services">
-        <p class="section__subheader">WHY CHOOSE US</p>
-        <h2 class="section__header">Experience Unmatched Services</h2>
-        <div class="steps__grid">
-          <div class="steps__card">
-            <span><i class="ri-truck-line"></i></span>
-            <h4>Free Shipping</h4>
-            <p>Enjoy free shipping on all orders, ensuring you get the best value without any extra cost.</p>
-          </div>
-          <div class="steps__card">
-            <span><i class="ri-time-line"></i></span>
-            <h4>Fast Delivery</h4>
-            <p>Receive your products quickly with our efficient and reliable delivery service.</p>
-          </div>
-          <div class="steps__card">
-            <span><i class="ri-customer-service-line"></i></span>
-            <h4>24/7 Support</h4>
-            <p>Our dedicated support team is available around the clock to assist you with any inquiries.</p>
-          </div>
-        </div>
-      </section>
-
-    
-      <section class="marquee-section">
-        <h2>Brands We Offer</h2>
-        <div class="marquee">
-            <div class="marquee-content">
-                <img src="./assets/img/apple_logo.jpeg" alt="apple_logo">
-                <img src="./assets/img/R.png" alt="samsung">
-                <img src="./assets/img/Xiaomi-Logo.png" alt="Xiaomi-Logo">
-                <img src="./assets/img/JBL-Logo.png" alt="JBL-Logo">
-                <img src="./assets/img/playstation.png" alt="playstation">
-                <img src="./assets/img/hp.png" alt="hp">
-                <img src="./assets/img/apple_logo.jpeg" alt="apple_logo">
-                <img src="./assets/img/R.png" alt="samsung">
-                <img src="./assets/img/Xiaomi-Logo.png" alt="Xiaomi-Logo">
-                <img src="./assets/img/JBL-Logo.png" alt="JBL-Logo">
-                <img src="./assets/img/playstation.png" alt="playstation">
-                <img src="./assets/img/hp.png" alt="hp">
-                <img src="./assets/img/apple_logo.jpeg" alt="apple_logo">
-                <img src="./assets/img/R.png" alt="samsung">
-                <img src="./assets/img/Xiaomi-Logo.png" alt="Xiaomi-Logo">
-                <img src="./assets/img/JBL-Logo.png" alt="JBL-Logo">
-                <img src="./assets/img/playstation.png" alt="playstation">
-                <img src="./assets/img/hp.png" alt="hp">
-                <!-- Repeat or add more logos as needed -->
+    <section class="services" id="services">
+      <div class="container">
+        <p class="section-subtitle" data-aos="fade-up">WHY CHOOSE US</p>
+        <h2 class="section-title" data-aos="fade-up" data-aos-delay="200">Experience Unmatched Services</h2>
+        <div class="services-grid">
+          <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-icon">
+              <i class="fas fa-shipping-fast"></i>
             </div>
+            <h3 class="service-title">Free Shipping</h3>
+            <p class="service-description">Enjoy free shipping on all orders, ensuring you get the best value without any extra cost.</p>
+          </div>
+          <div class="service-card" data-aos="fade-up" data-aos-delay="600">
+            <div class="service-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <h3 class="service-title">Fast Delivery</h3>
+            <p class="service-description">Receive your products quickly with our efficient and reliable delivery service.</p>
+          </div>
+          <div class="service-card" data-aos="fade-up" data-aos-delay="800">
+            <div class="service-icon">
+              <i class="fas fa-headset"></i>
+            </div>
+            <h3 class="service-title">24/7 Support</h3>
+            <p class="service-description">Our dedicated support team is available around the clock to assist you with any inquiries.</p>
+          </div>
         </div>
+      </div>
+    </section>
+
+    <section class="brands-section" data-aos="fade-up" data-aos-duration="800" data-aos-once="true">
+      <div class="container">
+        <h2 class="section-title">Brands We Offer</h2>
+        <div class="brands-grid">
+          <div class="brand-item" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
+            <img src="./assets/img/applelogo.png" alt="Apple">
+          </div>
+          <div class="brand-item" data-aos="fade-up" data-aos-duration="600" data-aos-delay="400">
+            <img src="./assets/img/R.png" alt="Samsung">
+          </div>
+          <div class="brand-item" data-aos="fade-up" data-aos-duration="600" data-aos-delay="600">
+            <img src="./assets/img/Xiaomi-Logo.png" alt="Xiaomi">
+          </div>
+          <div class="brand-item" data-aos="fade-up" data-aos-duration="600" data-aos-delay="800">
+            <img src="./assets/img/JBL-Logo.png" alt="JBL">
+          </div>
+          <div class="brand-item" data-aos="fade-up" data-aos-duration="600" data-aos-delay="1000">
+            <img src="./assets/img/playstation.png" alt="PlayStation">
+          </div>
+          <div class="brand-item" data-aos="fade-up" data-aos-duration="600" data-aos-delay="1200">
+            <img src="./assets/img/hp.png" alt="HP">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="cta-container">
+        <div class="cta-content">
+          <h2 class="cta-title" data-aos="fade-up">Elevate Your Tech Experience</h2>
+          <p class="cta-description" data-aos="fade-up" data-aos-delay="200">
+            From budget-friendly options to premium devices, we've got the perfect gadget for you. 
+            Our expert team handpicks each item to ensure unparalleled quality and performance.
+          </p>
+          <ul class="cta-features" data-aos="fade-up" data-aos-delay="400">
+            <li>Diverse range for all budgets</li>
+            <li>30-day satisfaction guarantee</li>
+            <li>Complimentary shipping over $500</li>
+            <li>Dedicated expert support</li>
+          </ul>
+          <a href="#" class="cta-button" data-aos="zoom-in" data-aos-delay="600">
+            Explore Our Collection
+            <span class="button-arrow">→</span>
+          </a>
+        </div>
+        <div class="cta-image" data-aos="fade-left" data-aos-delay="300">
+          <img src="./assets/img/display3.jpeg" alt="Latest gadgets showcase">
+        </div>
+      </div>
     </section>
 
     <section class="dual-section">
-        <h2 class="section-title">Explore Our Products</h2>
-        <div class="section-wrapper">
-            <div class="section-item left">
-                <div class="content">
-                    <h1>iPhone</h1>
-                    <p>Our most powerful cameras yet. Ultrafast chips. And USB-C.</p>
-                    <a href="#" class="p-btn">Learn more</a>
-                    <a href="#" class="p-btn">Shop iPhone</a>
-                </div>
-                <img src="./assets/img/OIP.jpeg" alt="iPhone" class="section-image">
-            </div>
-            <div class="section-item right">
-                <div class="content">
-                    <h1>Apple Intelligence</h1>
-                    <p>AI for the rest of us. Coming in beta this fall.</p>
-                    <a href="#" class="p-btn">Learn more</a>
-                    <a href="#" class="p-btn">Watch the film</a>
-                </div>
-                <img src="./assets/img/OIP.jpeg" alt="Apple Intelligence" class="section-image">
-            </div>
-            <div class="section-item left">
-                <div class="content">
-                    <h1>Product 3</h1>
-                    <p>Description for Product 3.</p>
-                    <a href="#" class="p-btn">Learn more</a>
-                    <a href="#" class="p-btn">Shop now</a>
-                </div>
-                <img src="./assets/img/product3.jpg" alt="Product 3" class="section-image">
-            </div>
-            <div class="section-item right">
-                <div class="content">
-                    <h1>Product 4</h1>
-                    <p>Description for Product 4.</p>
-                    <a href="#" class="p-btn">Learn more</a>
-                    <a href="#" class="p-btn">Shop now</a>
-                </div>
-                <img src="./assets/img/product4.jpg" alt="Product 4" class="section-image">
-            </div>
-            <div class="section-item left">
-                <div class="content">
-                    <h1>Product 5</h1>
-                    <p>Description for Product 5.</p>
-                    <a href="#" class="p-btn">Learn more</a>
-                    <a href="#" class="p-btn">Shop now</a>
-                </div>
-                <img src="./assets/img/product5.jpg" alt="Product 5" class="section-image">
-            </div>
-            <div class="section-item right">
-                <div class="content">
-                    <h1>Product 6</h1>
-                    <p>Description for Product 6.</p>
-                    <a href="#" class="p-btn">Learn more</a>
-                    <a href="#" class="p-btn">Shop now</a>
-                </div>
-                <img src="./assets/img/product6.jpg" alt="Product 6" class="section-image">
-            </div>
-        </div>
-    </section>
+      <h2 class="section-title">Explore Our Premium Selection at Nas Gadget</h2>
+      <div class="section-wrapper">
+          <div class="section-item left">
+              <div class="content">
+                  <h1>iphone</h1>
+                  <p>Experience Apple's latest innovation at Nas Gadget. We offer the newest, UK and US used iPhones with powerful cameras, ultrafast chips, and USB-C connectivity. Upgrade your mobile life today.</p>
+                  <a href="#" class="p-btn">iPhone Models</a>
+                  <a href="#" class="p-btn">Special Offers</a>
+              </div>
+              <img src="./assets/img/OIP.jpeg" alt="iPhone" class="section-image">
+          </div>
+          <div class="section-item right">
+              <div class="content">
+                  <h1>Samsung Galaxy</h1>
+                  <p>Discover the Galaxy range at Nas Gadget. From sleek designs to AI-powered features, we have the perfect Samsung device for every need. Enjoy our exclusive Galaxy deals and bundles.</p>
+                  <a href="#" class="p-btn">Galaxy Range</a>
+                  <a href="#" class="p-btn">Bundle Savings</a>
+              </div>
+              <img src="./assets/img/OIP.jpeg" alt="Samsung Galaxy" class="section-image">
+          </div>
+          <div class="section-item left">
+              <div class="content">
+                  <h1>Xiaomi</h1>
+                  <p>Explore Xiaomi's innovative tech at unbeatable Nas Gadget prices. We stock the latest Xiaomi phones, offering high-end features without breaking the bank. Check out our Xiaomi deals today.</p>
+                  <a href="#" class="p-btn">Xiaomi Selection</a>
+                  <a href="#" class="p-btn">Value Deals</a>
+              </div>
+              <img src="./assets/img/product3.jpg" alt="Xiaomi" class="section-image">
+          </div>
+          <div class="section-item right">
+              <div class="content">
+                  <h1>JBL</h1>
+                  <p>Elevate your audio experience with JBL at Nas Gadget. From portable speakers to premium headphones, we offer the full JBL range. Enjoy our exclusive audio bundle deals.</p>
+                  <a href="#" class="p-btn">JBL Collection</a>
+                  <a href="#" class="p-btn">Audio Bundles</a>
+              </div>
+              <img src="./assets/img/product4.jpg" alt="JBL" class="section-image">
+          </div>
+          <div class="section-item left">
+              <div class="content">
+                  <h1>PlayStation</h1>
+                  <p>Level up your gaming at Nas Gadget. We stock the latest PlayStation consoles, games, and accessories. Check out our gaming bundles for the ultimate PlayStation experience.</p>
+                  <a href="#" class="p-btn">PlayStation Range</a>
+                  <a href="#" class="p-btn">Gaming Deals</a>
+              </div>
+              <img src="./assets/img/product5.jpg" alt="PlayStation" class="section-image">
+          </div>
+          <div class="section-item right">
+              <div class="content">
+                  <h1>HP</h1>
+                  <p>Power up your productivity with HP at Nas Gadget. We offer a wide range of HP laptops and desktops for work and play. Enjoy our exclusive HP deals and warranty offers.</p>
+                  <a href="#" class="p-btn">HP Products</a>
+                  <a href="#" class="p-btn">Business Solutions</a>
+              </div>
+              <img src="./assets/img/product6.jpg" alt="HP" class="section-image">
+          </div>
+      </div>
+  </section>
 
     <section class="section__container service__container" id="service">
         <div class="service__image">
@@ -339,6 +372,29 @@
 
 
 <script>
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+
+    hamburger.addEventListener('click', () => {
+        navMenu.classList.toggle('show');
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const slides = document.querySelectorAll('.text-slide');
+    let currentSlide = 0;
+
+    function showNextSlide() {
+        slides[currentSlide].style.display = 'none';
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].style.display = 'block';
+    }
+
+    slides[currentSlide].style.display = 'block';
+    setInterval(showNextSlide, 1000);
+});
+
 function initMap() {
   const storeLocation = { lat: YOUR_LATITUDE, lng: YOUR_LONGITUDE };
   const map = new google.maps.Map(document.getElementById("map"), {
@@ -465,6 +521,11 @@ document.addEventListener('DOMContentLoaded', function() {
     images.forEach(image => {
         observer.observe(image);
     });
+});
+
+AOS.init({
+  duration: 1000,
+  once: true,
 });
 
 </script>
